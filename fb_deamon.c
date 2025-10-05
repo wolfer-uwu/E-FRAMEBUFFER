@@ -11,7 +11,7 @@
 #include "epaper/epaper.h"
 
 #define FB_DEVICE "/dev/fb0"
-#define UPDATE_INTERVAL 2  // Уменьшил интервал для более частого обновления
+#define UPDATE_INTERVAL 2 
 
 static uint8_t display_buffer[15000];
 static int running = 1;
@@ -58,7 +58,7 @@ void update_from_framebuffer(int fb_fd)
     
    
     epd_paint_selectimage(display_buffer);
-    epd_paint_clear(EPD_COLOR_WHITE);  // Очищаем белым
+    epd_paint_clear(EPD_COLOR_WHITE);
     
   
     for (int y = 0; y < EPD_H && y < vinfo.yres; y++) {
@@ -92,8 +92,8 @@ void update_from_framebuffer(int fb_fd)
             int luminance = (r + g + b) / 3;
             
         
-            if (luminance > 128) {  // Светлый пиксель в исходном
-                epd_paint_setpixel(x, y, EPD_COLOR_BLACK);  // Делаем черным
+            if (luminance > 128) {
+                epd_paint_setpixel(x, y, EPD_COLOR_BLACK);
             }
        
         }
