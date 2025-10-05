@@ -15,11 +15,8 @@ make
 
 ## running 
 ~~~
-# enable spi
 sudo raspi-config 
 # Interfacing Options -> SPI -> Yes
-
-# reboot
 sudo reboot
 ~~~
 ~~~
@@ -29,7 +26,8 @@ cd E-FRAMEBUFFER/
 
 ## Display connection
 ~~~
-# connect epaper module
+# connect epaper module to RPI GPIO.
+#
 # res pin  -> Pin 11
 # busy pin -> Pin 18
 # d/c pin  -> Pin 22
